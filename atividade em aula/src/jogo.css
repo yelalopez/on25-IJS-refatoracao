@@ -1,0 +1,17 @@
+div {
+    float:left;
+    width:auto;
+    height:500px;
+    background:#fff;
+    border: solid 1px #a2a2a2;
+}
+#cenario{
+    float:left;
+    width: 600px;
+    height: 500px;
+    background:url('imagens/cenario.png');
+    background-position: bottom;
+}
+table{
+    border: 0;
+}
