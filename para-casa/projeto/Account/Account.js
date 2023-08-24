@@ -4,7 +4,7 @@ class Account {
   balance;
   pixKeys;
   income;
-  static all = []; 
+  static getAllAccounts = []; 
 
   constructor(accountNumber, agency, balance) {
     this.accountNumber = accountNumber;
@@ -15,13 +15,14 @@ class Account {
       email: undefined,
       telefone: undefined
     }
-    Account.all.push(this); 
+    Account.getAllAccounts.push(this); 
+    return "Conta criada com sucesso";
   }
 
 
-  destroy() {
-    let i = Account.all.indexOf(this);
-    Account.all.splice(i, 1);
+  removeAccount() {
+    let i = Account.getAllAccounts.indexOf(this);
+    Account.getAllAccounts.splice(i, 1);
   };
 
   createAccount(accountNumber, agency, balance) {
@@ -123,7 +124,7 @@ class Account {
   };
 
   transfer(value, accountNumber, agency) {
-    const validAccount = Account.all.find(account => {
+    const validAccount = Account.getAllAccounts.find(account => {
       let accNumber = account.getAccountNumber();
       let accAgency = account.getAgency();
       return accNumber === accountNumber && accAgency === agency;
@@ -147,7 +148,7 @@ class Account {
   };
 
   pix(value, pixKey, keyType) {
-    const validAccount = Account.all.find(account => {
+    const validAccount = Account.getAllAccounts.find(account => {
       return account.pixKeys[keyType] === pixKey;
     })
 
