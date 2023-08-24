@@ -15,7 +15,7 @@ class Account {
       email: undefined,
       telefone: undefined
     }
-    Account.getAllAccounts.push(this); 
+    Account.getAllAccounts.push(this);
     return "Conta criada com sucesso";
   }
 
